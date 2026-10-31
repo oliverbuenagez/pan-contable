@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contabilidad de ventas de pan: clientes, productos y estadísticas.">
+  <title>Contabilidad de Ventas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado__contenido">
+      <div>
+        <p class="encabezado__etiqueta">Panadería</p>
+        <h1 class="encabezado__titulo">Contabilidad de Ventas</h1>
+      </div>
+      <div class="estado" id="estado-conexion" role="status" aria-live="polite">
+        <span class="estado__punto" aria-hidden="true"></span>
+        <span class="estado__texto">Modo local</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navegacion" aria-label="Secciones principales">
+    <div class="contenedor">
+      <ul class="navegacion__lista" role="tablist">
+        <li role="presentation">
+          <button class="navegacion__boton navegacion__boton--activo" type="button" role="tab" id="tab-ventas" aria-selected="true" aria-controls="seccion-ventas" data-seccion="ventas">Ventas</button>
+        </li>
+        <li role="presentation">
+          <button class="navegacion__boton" type="button" role="tab" id="tab-clientes" aria-selected="false" aria-controls="seccion-clientes" data-seccion="clientes">Clientes</button>
+        </li>
+        <li role="presentation">
+          <button class="navegacion__boton" type="button" role="tab" id="tab-productos" aria-selected="false" aria-controls="seccion-productos" data-seccion="productos">Panes</button>
+        </li>
+        <li role="presentation">
+          <button class="navegacion__boton" type="button" role="tab" id="tab-dashboard" aria-selected="false" aria-controls="seccion-dashboard" data-seccion="dashboard">Dashboard</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="contenedor principal" id="contenido" tabindex="-1">
+    <section class="seccion" id="seccion-ventas" role="tabpanel" aria-labelledby="tab-ventas">
+      <div class="seccion__encabezado">
+        <h2>Ventas</h2>
+        <p>Registra las ventas del día y consulta el historial.</p>
+      </div>
+      <div class="tarjeta tarjeta--vacia">
+        <h3>Sin ventas registradas</h3>
+        <p>En la siguiente fase agregaremos el formulario para registrar ventas y la lista de movimientos.</p>
+      </div>
+    </section>
+
+    <section class="seccion" id="seccion-clientes" role="tabpanel" aria-labelledby="tab-clientes" hidden>
+      <div class="seccion__encabezado">
+        <h2>Clientes</h2>
+        <p>Administra los clientes del negocio.</p>
+      </div>
+      <div class="tarjeta tarjeta--vacia">
+        <h3>Sin clientes todavía</h3>
+        <p>Próximamente podrás registrar, editar y desactivar clientes.</p>
+      </div>
+    </section>
+
+    <section class="seccion" id="seccion-productos" role="tabpanel" aria-labelledby="tab-productos" hidden>
+      <div class="seccion__encabezado">
+        <h2>Panes</h2>
+        <p>Configura los tipos de pan y sus precios.</p>
+      </div>
+      <div class="tarjeta tarjeta--vacia">
+        <h3>Sin panes registrados</h3>
+        <p>Próximamente podrás agregar panes con su precio y activarlos o desactivarlos.</p>
+      </div>
+    </section>
+
+    <section class="seccion" id="seccion-dashboard" role="tabpanel" aria-labelledby="tab-dashboard" hidden>
+      <div class="seccion__encabezado">
+        <h2>Dashboard</h2>
+        <p>Consulta el resumen y las estadísticas de tus ventas.</p>
+      </div>
+      <div class="tarjeta tarjeta--vacia">
+        <h3>Sin datos para mostrar</h3>
+        <p>Próximamente verás aquí los indicadores, los panes más vendidos y los gráficos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Contabilidad de Ventas · Datos en Firebase Firestore</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
