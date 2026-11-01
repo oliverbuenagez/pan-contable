@@ -50,7 +50,7 @@
       </div>
       <div class="tarjeta tarjeta--vacia">
         <h3>Sin ventas registradas</h3>
-        <p>En la siguiente fase agregaremos el formulario para registrar ventas y la lista de movimientos.</p>
+        <p>En una fase posterior agregaremos el formulario para registrar ventas y la lista de movimientos.</p>
       </div>
     </section>
 
@@ -70,9 +70,34 @@
         <h2>Panes</h2>
         <p>Configura los tipos de pan y sus precios.</p>
       </div>
-      <div class="tarjeta tarjeta--vacia">
-        <h3>Sin panes registrados</h3>
-        <p>Próximamente podrás agregar panes con su precio y activarlos o desactivarlos.</p>
+      <div class="rejilla-dos">
+        <form class="tarjeta formulario" id="formulario-producto" novalidate>
+          <h3 id="titulo-formulario-producto">Nuevo pan</h3>
+          <input type="hidden" id="producto-id" name="id">
+          <div class="campo">
+            <label for="producto-nombre">Nombre del pan</label>
+            <input id="producto-nombre" name="nombre" type="text" maxlength="60" required placeholder="Ej: Pan blandito" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="producto-precio">Precio por unidad (COP)</label>
+            <input id="producto-precio" name="precio" type="text" inputmode="numeric" maxlength="12" required placeholder="Ej: 500" autocomplete="off">
+          </div>
+          <p class="mensaje" id="mensaje-producto" role="status" aria-live="polite"></p>
+          <div class="acciones">
+            <button class="boton boton--primario" type="submit" id="boton-guardar-producto">Guardar pan</button>
+            <button class="boton boton--secundario" type="button" id="boton-cancelar-producto" hidden>Cancelar</button>
+          </div>
+        </form>
+
+        <div class="tarjeta">
+          <div class="tarjeta__encabezado">
+            <h3>Lista de panes</h3>
+            <span class="contador" id="contador-productos">0</span>
+          </div>
+          <div class="lista" id="lista-productos">
+            <p class="vacio">Cargando panes...</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -96,5 +121,6 @@
 
   <script type="module" src="js/app.js"></script>
   <script type="module" src="js/conexion.js"></script>
+  <script type="module" src="js/productos.js"></script>
 </body>
 </html>

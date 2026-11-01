@@ -2,13 +2,23 @@ import { signInAnonymously } from "https://www.gstatic.com/firebasejs/13.1.0/fir
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 import { auth, db } from "./firebase-config.js";
 
-export async function iniciarSesionAnonima() {
+let promesaSesion = null;
+
+export function iniciarSesionAnonima() {
   if (auth.currentUser) {
-    return auth.currentUser;
+    return Promise.resolve(auth.currentUser);
   }
 
-  const credencial = await signInAnonymously(auth);
-  return credencial.user;
+  if (!promesaSesion) {
+    promesaSesion = signInAnonymously(auth)
+      .then((credencial) => credencial.user)
+      .catch((error) => {
+        promesaSesion = null;
+        throw error;
+      });
+  }
+
+  return promesaSesion;
 }
 
 export async function probarFirestore() {

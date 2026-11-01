@@ -21,6 +21,7 @@
 
 ## Datos (Firestore)
 - Colecciones: `clientes`, `productos`, `ventas`.
+- `productos`: `nombre`, `precio` (entero COP), `activo`, `creadoEn`.
 - Ventas por unidad, solo contado, sin recibos por ahora.
 - Guardar en cada venta copia de `nombre` y `precio` de cada producto (histórico inmutable).
 - `fecha` como Timestamp y `fechaDia` como `"YYYY-MM-DD"` para agrupar; `creadoEn` con `serverTimestamp()`.
@@ -40,4 +41,5 @@
 - `css/estilos.css` — estilos mobile-first.
 - `js/app.js` — navegación entre secciones.
 - `js/conexion.js` — inicia sesión anónima y actualiza el estado de conexión.
-- JS modular previsto en `js/`: `firebase-config.js`, `db.js`, `utilidades.js`, `clientes.js`, `productos.js`, `ventas.js`, `dashboard.js`.
+- `js/productos.js` — formulario y lista de panes (crear, editar, activar/desactivar).
+- JS modular en `js/`: `firebase-config.js`, `db.js`, `utilidades.js`, `conexion.js`, `productos.js` (implementados); `clientes.js`, `ventas.js`, `dashboard.js` (pendientes).
