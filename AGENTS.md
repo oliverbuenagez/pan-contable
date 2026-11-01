@@ -39,4 +39,5 @@
 - `index.html` — esqueleto y navegación por pestañas.
 - `css/estilos.css` — estilos mobile-first.
 - `js/app.js` — navegación entre secciones.
+- `js/conexion.js` — inicia sesión anónima y actualiza el estado de conexión.
 - JS modular previsto en `js/`: `firebase-config.js`, `db.js`, `utilidades.js`, `clientes.js`, `productos.js`, `ventas.js`, `dashboard.js`.
