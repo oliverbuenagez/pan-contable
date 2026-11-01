@@ -22,6 +22,14 @@ export function limpiarTexto(valor) {
   return String(valor ?? "").trim().replace(/\s+/g, " ");
 }
 
+export function normalizarBusqueda(valor) {
+  return String(valor ?? "")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .trim();
+}
+
 export function escaparHTML(valor) {
   const reemplazos = {
     "&": "&amp;",

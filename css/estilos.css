@@ -248,7 +248,9 @@ button {
   font-weight: 600;
 }
 
-.campo input {
+.campo input,
+.campo textarea,
+.buscador input {
   width: 100%;
   padding: 0.7rem 0.8rem;
   border: 1px solid var(--borde);
@@ -258,11 +260,24 @@ button {
   font: inherit;
 }
 
-.campo input:hover {
+.campo textarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
+.buscador {
+  margin-bottom: 0.85rem;
+}
+
+.campo input:hover,
+.campo textarea:hover,
+.buscador input:hover {
   border-color: #d5c3b0;
 }
 
-.campo input:focus {
+.campo input:focus,
+.campo textarea:focus,
+.buscador input:focus {
   border-color: var(--marca);
   outline: none;
   box-shadow: 0 0 0 3px rgba(154, 91, 46, 0.18);
@@ -375,6 +390,19 @@ button {
   margin: 0;
   color: var(--marca-oscura);
   font-weight: 700;
+}
+
+.item__detalle {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+}
+
+.item__notas {
+  margin: 0.15rem 0 0;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  font-style: italic;
 }
 
 .item__acciones {

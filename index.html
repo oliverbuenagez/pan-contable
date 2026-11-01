@@ -59,9 +59,45 @@
         <h2>Clientes</h2>
         <p>Administra los clientes del negocio.</p>
       </div>
-      <div class="tarjeta tarjeta--vacia">
-        <h3>Sin clientes todavía</h3>
-        <p>Próximamente podrás registrar, editar y desactivar clientes.</p>
+      <div class="rejilla-dos">
+        <form class="tarjeta formulario" id="formulario-cliente" novalidate>
+          <h3 id="titulo-formulario-cliente">Nuevo cliente</h3>
+          <input type="hidden" id="cliente-id" name="id">
+          <div class="campo">
+            <label for="cliente-nombre">Nombre</label>
+            <input id="cliente-nombre" name="nombre" type="text" maxlength="80" required placeholder="Ej: Doña Ana" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="cliente-telefono">Teléfono (opcional)</label>
+            <input id="cliente-telefono" name="telefono" type="tel" maxlength="25" placeholder="Ej: 300 123 4567" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="cliente-direccion">Dirección (opcional)</label>
+            <input id="cliente-direccion" name="direccion" type="text" maxlength="120" placeholder="Ej: Calle 10 #5-20, Barrio Centro" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="cliente-notas">Notas (opcional)</label>
+            <textarea id="cliente-notas" name="notas" maxlength="200" rows="2" placeholder="Ej: Pide pan los martes"></textarea>
+          </div>
+          <p class="mensaje" id="mensaje-cliente" role="status" aria-live="polite"></p>
+          <div class="acciones">
+            <button class="boton boton--primario" type="submit" id="boton-guardar-cliente">Guardar cliente</button>
+            <button class="boton boton--secundario" type="button" id="boton-cancelar-cliente" hidden>Cancelar</button>
+          </div>
+        </form>
+
+        <div class="tarjeta">
+          <div class="tarjeta__encabezado">
+            <h3>Lista de clientes</h3>
+            <span class="contador" id="contador-clientes">0</span>
+          </div>
+          <div class="buscador">
+            <input id="buscador-clientes" type="search" placeholder="Buscar por nombre o teléfono" aria-label="Buscar clientes" autocomplete="off">
+          </div>
+          <div class="lista" id="lista-clientes">
+            <p class="vacio">Cargando clientes...</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -122,5 +158,6 @@
   <script type="module" src="js/app.js"></script>
   <script type="module" src="js/conexion.js"></script>
   <script type="module" src="js/productos.js"></script>
+  <script type="module" src="js/clientes.js"></script>
 </body>
 </html>

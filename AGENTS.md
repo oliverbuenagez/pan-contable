@@ -22,7 +22,9 @@
 ## Datos (Firestore)
 - Colecciones: `clientes`, `productos`, `ventas`.
 - `productos`: `nombre`, `precio` (entero COP), `activo`, `creadoEn`.
+- `clientes`: `nombre`, `telefono` (opcional), `direccion` (opcional, incluye barrio), `notas` (opcional), `activo`, `creadoEn`.
 - Ventas por unidad, solo contado, sin recibos por ahora.
+- Cliente opcional en ventas: guardar `clienteId` y copia de `clienteNombre` si se elige; si no, `clienteId: null` y `clienteNombre: "Cliente ocasional"`.
 - Guardar en cada venta copia de `nombre` y `precio` de cada producto (histórico inmutable).
 - `fecha` como Timestamp y `fechaDia` como `"YYYY-MM-DD"` para agrupar; `creadoEn` con `serverTimestamp()`.
 - Borrado lógico con `activo: false` en clientes y productos; no borrar historial.
@@ -42,4 +44,5 @@
 - `js/app.js` — navegación entre secciones.
 - `js/conexion.js` — inicia sesión anónima y actualiza el estado de conexión.
 - `js/productos.js` — formulario y lista de panes (crear, editar, activar/desactivar).
-- JS modular en `js/`: `firebase-config.js`, `db.js`, `utilidades.js`, `conexion.js`, `productos.js` (implementados); `clientes.js`, `ventas.js`, `dashboard.js` (pendientes).
+- `js/clientes.js` — formulario, lista, búsqueda y activación de clientes.
+- JS modular en `js/`: `firebase-config.js`, `db.js`, `utilidades.js`, `conexion.js`, `productos.js`, `clientes.js` (implementados); `ventas.js`, `dashboard.js` (pendientes).
